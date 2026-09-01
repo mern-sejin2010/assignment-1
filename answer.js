@@ -9,3 +9,29 @@ function describeValue (value) {
     }
     return `${valueType} | ${truthyFalsy}`;
 };
+
+// Question No. 2
+function getDayType (value) {
+    let dayType;
+    const day = value.toLowerCase();
+    switch (true) {
+        case (
+            day == 'friday' || 
+            day == 'saturday'
+        ):
+            dayType = 'Weekend';
+            break;
+        case (
+            day == 'sunday' ||
+            day == 'monday' ||
+            day == 'tuesday' ||
+            day == 'wednesday' ||
+            day == 'thursday'
+        ): 
+            dayType = 'Working Day';
+            break;
+        default:
+            dayType = 'Invalid Day';
+    }
+    return dayType;
+};
