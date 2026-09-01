@@ -56,3 +56,20 @@ function getCngFare (
     if (isNight) totalFare += totalFare * (20/100);
     return totalFare;
 };
+
+// Question No. 5
+const getChaseVerdict = (target, scored, ballsLeft) => {
+    let requiredRate;
+    let runsNeeded = target - scored;
+
+    if (runsNeeded <= 0) return 'Won';
+    if (ballsLeft <= 0) return 'Lost';
+    requiredRate = (runsNeeded / ballsLeft) * 6;
+
+    const verdict = 
+        requiredRate <= 6 ? 'Comfortable' :
+        requiredRate > 6 && requiredRate <= 12 ? 'Tough' :
+        'Almost Impossible';
+
+    return `Need ${runsNeeded} runs in ${ballsLeft} balls | ${verdict}`;
+};
